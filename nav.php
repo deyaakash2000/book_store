@@ -28,7 +28,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="login.php">Sigh up</a>
+        <a class="nav-link" href="user-login.php">Sigh up</a>
       </li> 
     </ul>  
   </div>

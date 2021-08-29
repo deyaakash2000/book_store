@@ -6,10 +6,10 @@ $success = false;
 $unsucess = false;
 if ($_SERVER["REQUEST_METHOD"]=="POST") {
     include_once"connection.php";
-    $qry = mysqli_query($con, "SELECT `id` FROM `register` WHERE `email`='".$_REQUEST['email']."'");
+    $qry = mysqli_query($con, "SELECT `id` FROM `user` WHERE `email`='".$_REQUEST['email']."'");
     $num = mysqli_num_rows($qry);
     if ($num === 0) {
-        $qry = "INSERT INTO `register` VALUES ('','".$_REQUEST['name']."','".$_REQUEST['email']."','".$_REQUEST['contact']."','".$_REQUEST['password']."')";
+        $qry = "INSERT INTO `user` VALUES ('','".$_REQUEST['name']."','".$_REQUEST['email']."','".$_REQUEST['password']."','".$_REQUEST['contact']."')";
         $exe = mysqli_query($con, $qry);
         if ($exe) {
             // echo "success fully register";
@@ -56,17 +56,17 @@ if ($success == true) {
  ?>
 
 <?php
-if ($unsucess = true) {
-    echo '<div class="alert alert-dengar alert-dismissible fade show" role="alert">
-    <strong>unsuccess!</strong>Email Exist 
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>';
-} 
+// if ($unsucess = true) {
+//     echo '<div class="alert alert-dengar alert-dismissible fade show" role="alert">
+//     <strong>unsuccess!</strong>Email Exist 
+//     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+//       <span aria-hidden="true">&times;</span>
+//     </button>
+//   </div>';
+// } 
  ?>
     <div class="container my-5">
-        <form action="register-acc.php" method="post" onsubmit="return valid()">
+        <form action="<?php $_SERVER['REQUEST_URI']; ?>" method="post" onsubmit="return valid()">
             <div class="form-group col-md-6">
                 <label for="exampleFormControlInput1">Email address</label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
@@ -91,7 +91,7 @@ if ($unsucess = true) {
 
             <button type="submit" class="btn btn-primary col-md-6">Sign in</button>
         </form>
-
+        </div>
         <script>
             function valid(){
                 var email = document.getElementById('email').value;
@@ -117,7 +117,7 @@ if ($unsucess = true) {
                 }
             }
         </script>
-    </div>
+  
 
 
 <?php 
