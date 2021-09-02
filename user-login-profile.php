@@ -14,7 +14,7 @@ include_once"connection.php";
 $qry = mysqli_query($con,"SELECT `name`,`email` FROM `user` WHERE `id`=".$_SESSION['id']);
 $row = mysqli_fetch_array($qry);
 ?>
-// echo "Name :".$row['name'];
+
 
 <!doctype html>
 <html lang="en">
@@ -30,24 +30,38 @@ $row = mysqli_fetch_array($qry);
   </head>
   <body>
  
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-<a class="navbar-brand text-white bg-dark">
+
   <?php
 echo "Welcome : ". $row['name'];
+
 ?>
-</a>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
- 
-  aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
+
 </button>
 <a href="user-logout.php"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">logout</button></a>
-
-<div class="collapse navbar-collapse" id="navbarsExampleDefault">
-  <ul class="navbar-nav mr-auto">
-  </ul>
-</div>
-</nav>
+<a href='cart.php' class='btn btn-primary'>cart</a>
+<br>
+<br>
+<?php
+print_r($_SESSION['cart']);
+?>
+<div class="my-5">
+<?php
+$qry = mysqli_query($con,"SELECT * FROM `books`");
+$num  =mysqli_num_rows($qry);
+if ($num>0) {
+    while ($row = mysqli_fetch_array($qry)) {
+    echo"  <div class='card' style='width: 18rem;'>";
+    echo"  <img class='card-img-top' src=".$row['pic']." alt='Card image cap'>";
+    echo"  <div class='card-body'>";
+    echo"    <h5 class='card-title'>".$row['bookname']."</h5>";
+    echo"    <p class='card-text'>Auther : ".$row['authername']."</p>";
+    echo"    <p class='card-text'>Price : ".$row['price']."</p>";
+    echo"    <a href='manage.php?id=$row[id]&bookname=$row[bookname]&price=$row[price]' class='btn btn-primary' name='add_item'>Add to cart</a>";
+    echo"  </div>";
+    echo"</div>";
+    }
+}
+?>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

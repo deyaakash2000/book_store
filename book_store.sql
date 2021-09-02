@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 25, 2021 at 03:58 PM
+-- Generation Time: Sep 02, 2021 at 11:48 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -41,7 +41,8 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`id`, `adminid`, `bookname`, `authername`, `price`, `pic`) VALUES
-(4, 1, 'Python', 'Aakash', 200, 'upload/python.jpg');
+(4, 1, 'Python', 'Aakash', 200, 'upload/python.jpg'),
+(6, 2, 'JAVA', 'BIMOL', 252, 'upload/jaca.jpg');
 
 -- --------------------------------------------------------
 
@@ -62,7 +63,7 @@ CREATE TABLE `register` (
 --
 
 INSERT INTO `register` (`id`, `name`, `email`, `contact`, `password`) VALUES
-(1, 'Samol Das', 'aakashdey786@gmail.com', '258963', '123');
+(2, 'Aakash Dey', 'aakashdey786@gmail.com', '123', '123');
 
 -- --------------------------------------------------------
 
@@ -77,6 +78,13 @@ CREATE TABLE `user` (
   `password` varchar(255) NOT NULL,
   `contact` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `name`, `email`, `password`, `contact`) VALUES
+(1, 'Aakash Dey', 'aakashdey786@gmail.com', '123', '2536874');
 
 --
 -- Indexes for dumped tables
@@ -108,19 +116,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `register`
 --
 ALTER TABLE `register`
-  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
