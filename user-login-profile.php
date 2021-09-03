@@ -42,7 +42,7 @@ echo "Welcome : ". $row['name'];
 <br>
 <br>
 <?php
-print_r($_SESSION['cart']);
+// print_r($_SESSION['cart']);
 ?>
 <div class="my-5">
 <?php

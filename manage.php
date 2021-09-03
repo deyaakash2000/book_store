@@ -20,7 +20,7 @@ session_start();
       else
       {
           $count=count($_SESSION['cart']);
-          $_SESSION['cart'][$count]=array('id'=>$row['id'],'iten_name'=>$row['bookname'],'price'=>$row['price']);
+          $_SESSION['cart'][$count]=array('id'=>$row['id'],'iten_name'=>$row['bookname'],'price'=>$row['price'],'quantity'=>'1');
           //    print_r($_SESSION['cart']);
           echo"<script>
             alert('item add');
@@ -30,7 +30,7 @@ session_start();
     //  1st time execute when the page is load
       else
       {
-        $_SESSION['cart'][0]=array('id'=>$row['id'],'iten_name'=>$row['bookname'],'price'=>$row['price']);
+        $_SESSION['cart'][0]=array('id'=>$row['id'],'iten_name'=>$row['bookname'],'price'=>$row['price'],'quantity'=>'1');
         // print_r($_SESSION['cart']);
         echo"<script>alert('item add');
         window.location.href='user-login-profile.php'</script>";
