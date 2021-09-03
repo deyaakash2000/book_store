@@ -30,17 +30,34 @@ $row = mysqli_fetch_array($qry);
   </head>
   <body>
  
-
+  <nav class="navbar navbar-light bg-light justify-content-between">
+  <a class="navbar-brand">
   <?php
 echo "Welcome : ". $row['name'];
 
 ?>
+  
+  </a>
+  <form class="form-inline">
+    <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
+    <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+    <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
 
-</button>
-<a href="user-logout.php"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">logout</button></a>
+  </form>
+  <a href="user-logout.php"><button class="btn btn-outline-success" type="submit">logout</button></a>
+  <a href="cart.php"><button class="btn btn-primary" type="submit">Cart</button></a>
+  <!-- <a href="cart.php"><button class="btn btn-primary" type="submit">cart</a> -->
+</nav>
+
+  <?php
+// echo "Welcome : ". $row['name'];
+
+?>
+
+<!-- <a href="user-logout.php"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">logout</button></a>
 <a href='cart.php' class='btn btn-primary'>cart</a>
 <br>
-<br>
+<br> -->
 <?php
 // print_r($_SESSION['cart']);
 ?>

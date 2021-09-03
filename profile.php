@@ -37,12 +37,50 @@ $row= mysqli_fetch_array($qry);
     // echo"<br>";
     // echo "Name : ". $row['name'];
     ?>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand text-white bg-dark">
-      <?php
+
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+<a class="navbar-brand text-white bg-dark">
+<?php
     echo "Welcome : ";
     
     echo "Admin : ". $row['name'];
+    // echo "Admin id : ". $row['id'];
+?>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"></a>
+      </li>
+      <li class="nav-item dropdown">
+        
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#"></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+    <!-- <a href="logout.php"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">logout</button></a> -->
+    </form>
+    <a href="logout.php"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">logout</button></a>
+  </div>
+</nav>
+
+  <!-- <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand text-white bg-dark"> -->
+      <?php
+    // echo "Welcome : ";
+    
+    // echo "Admin : ". $row['name'];
     // echo "Admin id : ". $row['id'];
     ?>
     </a>
@@ -51,6 +89,7 @@ $row= mysqli_fetch_array($qry);
       aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <a href="logout.php"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">logout</button></a>
     <a href="logout.php"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">logout</button></a>
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
@@ -90,6 +129,9 @@ $row= mysqli_fetch_array($qry);
     </div>
   </div>
   </form>
+
+
+  
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -161,8 +203,12 @@ while($row = mysqli_fetch_array($qry)){
   echo "<td><img src='$row[pic]' width=200px height=200px></td>";
   echo "<td><a href='delete.php?id=$row[id]'><button class='btn btn-outline-danger'>Delete</button></a></td>";
   echo "</tr>";
+
 }
+// echo "<a href='logout.php'><button class='btn btn-outline-success my-2 my-sm-0' type='submit'>logout</button></a>"
 ?>
+
+<!-- <a href="logout.php"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">logout</button></a> -->
 </div>
 </body>
 
