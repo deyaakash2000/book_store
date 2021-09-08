@@ -57,23 +57,27 @@ include_once"connection.php";
         echo"</tr>";
     }
     ?>
-
-      </thead>
-    </table>
+ </thead>
+  </table>
   </div>
-
+ 
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <h1 class="display-4"> GAND TOTAL</h1>
-      <p class="lead" id="gtotal"> 
+      <p  id="gtotal"> 
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
     crossorigin="anonymous"></script>
+    <center>
+    <!-- <a href='index.php> <button name=remove class='btn btn-danger'>remove</button> -->
+     <a href= "index.php"> <button type="button" class="btn btn-primary btn-lg btn-block">Click Here to Continue Payment</button> </a>
+  </center>
+ 
 </body>
 <script>
-  var gt = 0;
+  var gt = 0
   var price = document.getElementsByClassName('price')
   var quantity = document.getElementsByClassName('quantity')
   var total = document.getElementsByClassName('total')
@@ -82,7 +86,8 @@ include_once"connection.php";
     gt = 0
     for (let i = 0; i < price.length; i++) {
       total[i].innerText= (price[i].value) * (quantity[i].value); 
-      gt = gt + (price[i].value) * (quantity[i].value) 
+      gt = gt + (price[i].value) * (quantity[i].value);
+
       // */ 100 q 2 = 0+100*2 == 200
       //   200 q 1 = 200+200*1 === 400
       // */
